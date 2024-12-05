@@ -208,14 +208,6 @@ This project has been built using the following resources:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- END OF PAGE BUTTONS -->
-<div align="center">
-  <p align="right">
-    <a href="docs/0_overview.md" style="text-align: right;">Next Page &rightarrow; </a>
-  </p>
-</div>
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/bellanich/pocket-llm.svg?style=for-the-badge
