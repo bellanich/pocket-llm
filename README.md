@@ -226,7 +226,7 @@ This project has been built using the following resources:
 [stars-url]: https://github.com/bellanich/pocket-llm/stargazers
 [issues-shield]: https://img.shields.io/github/issues/bellanich/pocket-llm.svg?style=for-the-badge
 [issues-url]: https://github.com/bellanich/pocket-llm/issues
-[license-shield]: https://img.shields.io/github/license/bellanich/pocket-llm?label=license&style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/bellanich/pocket-llm.svg?label=license&style=for-the-badge
 [license-url]: https://github.com/bellanich/pocket-llm/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/bella-nicholson/
