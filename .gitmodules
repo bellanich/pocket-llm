@@ -1,0 +1,3 @@
+[submodule "models/models/quantized/llava-onevision-qwen2-0.5b-ov-q4f16_1-mlc"]
+	path = models/models/quantized/llava-onevision-qwen2-0.5b-ov-q4f16_1-mlc
+	url = https://huggingface.co/bella-nich/llava-onevision-qwen2-0.5b-ov-q4f16_1-mlc
