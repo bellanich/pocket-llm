@@ -13,7 +13,6 @@ from tvm.relax.frontend.nn.modules import Conv2D
 from tvm.relax.frontend.nn.op import (
     add,
     broadcast_to,
-    concat,
     permute_dims,
     reshape,
     wrap_nested,

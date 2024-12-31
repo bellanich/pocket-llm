@@ -131,47 +131,6 @@ def awq(model_config: LlavaOnevisionConfig, quantization: Quantization) -> Exter
 
     mapping = ExternMapping()
 
-    # for i in range(model_config.text_config.num_hidden_layers):
-    #     # Add QKV in self attention
-    #     attn = f"language_model.model.layers.{i}.self_attn"
-    #     for quantize_suffix in ["qweight", "qzeros", "scales"]:
-    #         mlc_name = f"{attn}.qkv_proj.{quantize_suffix}"
-    #         assert mlc_name in named_parameters
-    #         mlc_param = named_parameters[mlc_name]
-    #         mapping.add_mapping(
-    #             mlc_name,
-    #             [
-    #                 f"{attn}.q_proj.{quantize_suffix}",
-    #                 f"{attn}.k_proj.{quantize_suffix}",
-    #                 f"{attn}.v_proj.{quantize_suffix}",
-    #             ],
-    #             functools.partial(
-    #                 lambda q, k, v, dtype: np.concatenate([q, k, v], axis=0).astype(dtype),
-    #                 dtype=mlc_param.dtype,
-    #             ),
-    #         )
-
-    #     # Concat gate and up in MLP
-    #     mlp = f"language_model.model.layers.{i}.mlp"
-    #     for quantize_suffix in ["qweight", "qzeros", "scales"]:
-    #         mlc_name = f"{mlp}.gate_up_proj.{quantize_suffix}"
-    #         assert mlc_name in named_parameters
-    #         mlc_param = named_parameters[mlc_name]
-    #         mapping.add_mapping(
-    #             mlc_name,
-    #             [
-    #                 f"{mlp}.gate_proj.{quantize_suffix}",
-    #                 f"{mlp}.up_proj.{quantize_suffix}",
-    #             ],
-    #             functools.partial(
-    #                 lambda gate, up, dtype: np.concatenate([gate, up], axis=0).astype(dtype),
-    #                 dtype=mlc_param.dtype,
-    #             ),
-    #         )
-
-    #     # inv_freq is not used in the model
-    #     mapping.add_unused(f"{attn}.rotary_emb.inv_freq")
-
     for mlc_name, mlc_param in named_parameters.items():
         if mlc_name not in mapping.param_map:
             mapping.add_mapping(

@@ -25,8 +25,6 @@ from mlc_llm.model.vision import ImageProcessor, SiglipVisionConfig, SiglipVisio
 from mlc_llm.nn import PagedKVCache, RopeMode
 
 from ...support.config import ConfigBase
-from ..llama.llama_model import LlamaConfig, LlamaForCausalLM
-from ..mistral.mistral_model import MistralConfig, MistralForCasualLM
 from ..qwen2.qwen2_model import QWen2Config, QWen2LMHeadModel
 
 # References in HF
@@ -37,15 +35,11 @@ logger = logging.getLogger(__name__)
 
 
 CONFIG_MAP = {
-    # "LlamaForCausalLM": LlamaConfig,
-    # "MistralForCausalLM": MistralConfig,
-    "QWen2LMHeadModel": QWen2Config,  # NEW !
-    "Qwen2ForCausalLM": QWen2Config  # NEW !
+    "QWen2LMHeadModel": QWen2Config,
+    "Qwen2ForCausalLM": QWen2Config
 }
 ARCHITECTURE_MAP = {
-    # "LlamaForCausalLM": LlamaForCausalLM,
-    # "MistralForCausalLM": MistralForCasualLM,
-    "QWen2LMHeadModel": QWen2LMHeadModel,  # NEW !
+    "QWen2LMHeadModel": QWen2LMHeadModel,
     "Qwen2ForCausalLM": QWen2LMHeadModel,
 }
 
@@ -121,10 +115,6 @@ class LlavaOnevisionConfig(ConfigBase):  # pylint: disable=too-many-instance-att
             # If transformers is not installed, get the config from preset
             # Llama2 is gated so it throws an OSError. Get the config from preset instead
             preset_mapping = {
-                # "meta-llama/Llama-2-7b-hf": "llama2_7b",
-                # "meta-llama/Llama-2-13b-hf": "llama2_13b",
-                # "lmsys/vicuna-7b-v1.5": "llama2_7b",
-                # "mistralai/Mistral-7B-v0.1": "mistral_7b",
                 "Qwen/Qwen2-0.5B-Instruct": "qwen2_0.5b",
             }
             if text_config_dict["_name_or_path"] in preset_mapping:
